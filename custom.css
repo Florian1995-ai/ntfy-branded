@@ -1,0 +1,46 @@
+/* Florian Rolke branded ntfy overrides */
+
+/* Override the header gradient from teal to blue */
+.MuiToolbar-root {
+    background: linear-gradient(150deg, #3A4FCC 0%, #2B7ADB 100%) !important;
+}
+
+/* Override the header AppBar background */
+.MuiAppBar-root .MuiToolbar-root {
+    background: linear-gradient(150deg, #3A4FCC 0%, #2B7ADB 100%) !important;
+}
+
+/* Replace the logo image with custom one */
+.MuiToolbar-root img[alt] {
+    content: url('/branding/logo.png') !important;
+    height: 32px !important;
+    object-fit: contain;
+}
+
+/* Override sidebar/navigation header color */
+.MuiDrawer-root .MuiToolbar-root {
+    background: linear-gradient(150deg, #3A4FCC 0%, #2B7ADB 100%) !important;
+}
+
+/* Override primary color for buttons, links, toggles */
+.MuiButton-containedPrimary {
+    background-color: #3A4FCC !important;
+}
+
+.MuiButton-containedPrimary:hover {
+    background-color: #2B3AAA !important;
+}
+
+/* Override checkbox/switch primary color */
+.MuiSwitch-colorPrimary.Mui-checked {
+    color: #3A4FCC !important;
+}
+
+.MuiSwitch-colorPrimary.Mui-checked + .MuiSwitch-track {
+    background-color: #3A4FCC !important;
+}
+
+/* Theme color for mobile browsers */
+meta[name="theme-color"] {
+    content: "#3A4FCC";
+}
