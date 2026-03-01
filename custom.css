@@ -1,19 +1,6 @@
 /* Florian Rolke branded ntfy overrides */
 
-/* Override ALL toolbar/header backgrounds — use highest specificity */
-.MuiToolbar-root,
-.MuiToolbar-root.MuiToolbar-gutters,
-.MuiToolbar-root.MuiToolbar-regular,
-header .MuiToolbar-root,
-.MuiAppBar-root .MuiToolbar-root,
-.MuiDrawer-root .MuiToolbar-root,
-[class*="MuiToolbar"] {
-    background: linear-gradient(150deg, #3A4FCC 0%, #2B7ADB 100%) !important;
-    background-image: linear-gradient(150deg, #3A4FCC 0%, #2B7ADB 100%) !important;
-    background-color: #3A4FCC !important;
-}
-
-/* Also override the AppBar root itself (it may hold the gradient) */
+/* ===== MAIN HEADER (AppBar) — Blue gradient ===== */
 .MuiAppBar-root,
 .MuiAppBar-root.MuiAppBar-colorPrimary,
 .MuiAppBar-root.MuiPaper-root,
@@ -24,41 +11,31 @@ header[class*="MuiAppBar"],
     background-color: #3A4FCC !important;
 }
 
-/* Override the sidebar/drawer bottom panel gradient */
+.MuiAppBar-root .MuiToolbar-root,
+.MuiAppBar-root [class*="MuiToolbar"] {
+    background: transparent !important;
+    background-image: none !important;
+    background-color: transparent !important;
+}
+
+/* ===== SIDEBAR/DRAWER — Reset to default (no blue gradient) ===== */
 .MuiDrawer-root .MuiToolbar-root,
 .MuiDrawer-paper .MuiToolbar-root,
 [class*="MuiDrawer"] [class*="MuiToolbar"] {
-    background: linear-gradient(150deg, #3A4FCC 0%, #2B7ADB 100%) !important;
-    background-image: linear-gradient(150deg, #3A4FCC 0%, #2B7ADB 100%) !important;
+    background: inherit !important;
+    background-image: none !important;
+    background-color: inherit !important;
 }
 
-/* Nuclear option: override ANY element with inline background gradient matching ntfy's colors */
-[style*="linear-gradient(150deg"] {
-    background: linear-gradient(150deg, #3A4FCC 0%, #2B7ADB 100%) !important;
-    background-image: linear-gradient(150deg, #3A4FCC 0%, #2B7ADB 100%) !important;
-}
-
-/* Also match the teal color specifically */
-[style*="#338574"],
-[style*="#56bda8"],
-[style*="#203631"],
-[style*="#2a6e60"],
-[style*="#317f6f"],
-[style*="rgba(196, 228, 221"] {
-    background: linear-gradient(150deg, #3A4FCC 0%, #2B7ADB 100%) !important;
-    background-image: linear-gradient(150deg, #3A4FCC 0%, #2B7ADB 100%) !important;
-}
-
-/* Replace the logo image with custom one */
-.MuiToolbar-root img[alt],
-[class*="MuiToolbar"] img,
-header img[alt="ntfy"] {
+/* ===== LOGO — Replace ntfy logo with custom ===== */
+.MuiAppBar-root img[alt],
+.MuiAppBar-root [class*="MuiToolbar"] img {
     content: url('/branding/logo.png') !important;
     height: 32px !important;
     object-fit: contain;
 }
 
-/* Override primary color for buttons, links */
+/* ===== PRIMARY COLORS ===== */
 .MuiButton-containedPrimary,
 [class*="MuiButton-containedPrimary"] {
     background-color: #3A4FCC !important;
@@ -69,7 +46,6 @@ header img[alt="ntfy"] {
     background-color: #2B3AAA !important;
 }
 
-/* Override primary link colors */
 a, a:visited {
     color: #3A4FCC !important;
 }
@@ -78,7 +54,6 @@ a:hover {
     color: #2B3AAA !important;
 }
 
-/* Override checkbox/switch primary color */
 .MuiSwitch-colorPrimary.Mui-checked {
     color: #3A4FCC !important;
 }
